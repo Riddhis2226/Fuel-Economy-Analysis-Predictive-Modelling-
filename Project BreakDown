@@ -1,0 +1,176 @@
+🧩 Project Breakdown
+📦 Step 1: Download & Understand the Data
+📥 Download datasets (2008–2018) from:
+
+EPA Green Vehicle Guide Data
+
+Data Description PDF
+
+Each year has one file — total 11 datasets (2008 to 2018).
+
+🛠️ Step 2: Data Analysis and Cleaning (Problem 1)
+For each dataset (separately):
+
+✔️ 1. Number of samples in each year (df.shape[0])
+✔️ 2. Number of columns (df.shape[1])
+✔️ 3. Duplicate rows (df.duplicated().sum())
+✔️ 4. Datatypes of columns (df.dtypes)
+✔️ 5. Features with missing values (df.isnull().sum())
+✔️ 6. Number of non-null unique values (df.nunique())
+✔️ 7. Unique values and counts for each (df['column_name'].value_counts())
+✔️ 8. Grouping and analyzing features (like grouping by fuelType, vehicleClass, SmartWay)
+
+✏️ Tip: Use loops to automate this part across all datasets.
+
+📊 Step 3: Data Visualization (Problem 2)
+At least 5 plots per dataset (you can combine some visuals across years).
+
+Good visualization ideas:
+
+📈 Trend of fuel types over years (bar plot, line plot)
+
+📉 MPG improvements over time (line plot)
+
+📊 SmartWay vehicle count by year (bar plot)
+
+📑 Pie chart for alternative fuels usage
+
+🧱 Boxplots to see distribution of City MPG and Highway MPG by year
+
+🧩 Histograms for CO2 emissions
+
+🌟 Scatter plots for relationship between MPG and Greenhouse Gas
+
+Use Matplotlib (required) and optionally Seaborn for better-looking charts.
+
+🔗 Step 4: Merging the Datasets (Problem 3)
+Add a 'year' column to each dataset.
+
+Merge all datasets using pd.concat([list_of_dfs]).
+
+Before merging:
+
+Standardize column names (some years may have slight differences!).
+
+Make sure datatypes are consistent.
+
+Drop unnecessary columns that don't exist in all years.
+
+✅ Result: One merged dataset covering 2008–2018.
+
+🔍 Step 5: Clustering Analysis
+Perform clustering to find groups in the data.
+
+Use:
+
+KMeans clustering (from sklearn.cluster import KMeans).
+
+Find the optimal number of clusters:
+
+Elbow Method (Plot WCSS vs k)
+
+Silhouette Score (sklearn.metrics.silhouette_score)
+
+Conclude what the clusters represent:
+
+Do they group by fuel economy?
+
+Do they group by fuel type?
+
+🧠 Step 6: Classification Model: SmartWay Prediction
+Target: Is the car a SmartWay vehicle or not?
+(Feature: SmartWay column)
+
+Use two models:
+
+Logistic Regression
+
+Decision Tree Classifier
+
+Steps:
+
+Preprocess data (handle missing values, encode categorical variables).
+
+Train-Test Split (train_test_split from sklearn).
+
+Train both models.
+
+Evaluate models using:
+
+Accuracy
+
+Confusion Matrix
+
+Precision, Recall, F1-score (optional for bonus)
+
+✅ Conclude:
+
+Which model is better (higher accuracy, better confusion matrix)?
+
+Why not the other?
+
+🚗 Step 7: Regression Model: Predict City MPG
+Target: City MPG (city08 or similar column)
+
+Features: Pick important features like vehicleClass, displ (engine displacement), fuelType, etc.
+
+Steps:
+
+Feature selection (correlation, etc.).
+
+Preprocessing (scaling numerical features if needed, encoding categorical).
+
+Build a Linear Regression Model.
+
+Evaluate using:
+
+R² score
+
+RMSE (Root Mean Squared Error)
+
+📑 Final Deliverables
+Prepare a clean Jupyter Notebook or Python scripts showing:
+
+Proper headings for each step.
+
+Proper use of comments.
+
+All code outputs clearly visible.
+
+Visualizations with titles and labels.
+
+Conclusion cells at the end of each section.
+
+Final summary slide/table.
+
+🔥 Software Setup Reminder
+Anaconda 4.2.0+ installed
+
+Python 3.5.2+
+
+Must use:
+
+numpy
+
+pandas
+
+matplotlib
+
+scikit-learn
+
+🛠 Quick Project Folder Structure Suggestion
+pgsql
+Copy
+Edit
+Capstone_Project_Fuel_Economy/
+│
+├── Data/ (Store all the 2008–2018 CSV files)
+├── Exploratory_Data_Analysis.ipynb
+├── Data_Cleaning_Merging.ipynb
+├── Visualizations.ipynb
+├── Clustering_Model.ipynb
+├── Classification_Model_SmartWay.ipynb
+├── Regression_Model_CityMPG.ipynb
+├── README.md (project summary)
+├── Plots/ (Save all plots as images)
+└── Final_Merged_Data.csv
