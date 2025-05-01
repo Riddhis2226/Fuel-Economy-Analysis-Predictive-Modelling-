@@ -6,8 +6,6 @@ This is a full Capstone Project in Python for Data Science involving EDA, Visual
 #### 📌 **Programming Language**
 - **Python** (Primary language for data analysis and modeling)
 
----
-
 ### 📚 **Libraries & Frameworks**
 
 #### ✅ **Data Manipulation**
