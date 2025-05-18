@@ -87,3 +87,9 @@ Component Marks:
 - Cluster creation with the appropriate number of clusters and conclusion = 15
 - Appropriate classification Model (2 models) with accuracy score = 20
 - Linear Regression Model to predict City MPG = 15
+
+---
+
+### Course Completion Certificate
+
+![Screenshot 2025-05-18 215647](https://github.com/user-attachments/assets/1de98731-356b-485c-8879-6f725fce5c90)
